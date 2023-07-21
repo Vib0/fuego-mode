@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'exocet-light';
+    src: url('../font/exocet.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    font-family: 'exocet-light';
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: white;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.backplate {
+    display: flex;
+    background: url('../media/backplate.png') no-repeat;
+    background-size: contain;
+    margin: 0 0 1.5625vw 0;
+    width: 22.5vw;
+    height: 13.125vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.data h1 {
+    font-size: 5vw;
+    text-transform: uppercase;
+}
+
+.data p {
+    margin: 0;
+    font-size: 18.75vw;
+    font-weight: 600;
+}
+
