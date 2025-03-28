@@ -1,3 +1,4 @@
+/* Keep all your existing styles */
 @font-face {
     font-family: 'exocet-light';
     src: url('../font/exocet.ttf')
@@ -22,42 +23,83 @@ body {
 }
 
 video {
-    width: 100%;
-    height: 100%;
+    /* Centered and scaled up 10% */
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%; /* Counteract the 10% scaling */
+    left: -5%;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .data {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temps-container {
+    display: flex;
+    gap: 10vw; /* Space between CPU/GPU groups */
+}
+
+.temp-group {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.backplate {
-    display: flex;
-    background: url('../media/backplate.png') no-repeat;
-    background-size: contain;
-    margin: 0 0 1.5625vw 0;
-    width: 22.5vw;
-    height: 13.125vw;
-    align-items: center;
-    justify-content: center;
-}
-
-.data h1 {
-    font-size: 5vw;
+.temp-label {
+    font-size: 3vw;
+    margin-bottom: 1vw;
     text-transform: uppercase;
 }
 
-.data p {
-    margin: 0;
+.temp-value {
     font-size: 18.75vw;
     font-weight: 600;
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
 
+.temps-container {
+    gap: 7vw; /* Wider spacing between groups */
+    transform: translateX(-1%); /* Subtle center nudge */
+  }
+  
+  .temp-label {
+    font-size: 10vw; /* Bigger CPU/GPU text */
+    margin-bottom: 0.8vw; /* Balanced spacing */
+    letter-spacing: 0.3vw; /* Improved clarity */
+    transform: translateX(-1vw); /* ← Adjust this value */
+  }
+  
+  .temp-value {
+    font-size: 21vw; /* Slightly larger numbers */
+    margin: 0 -1vw; /* Minimal inward pull */
+  }
+
+  .temp-label,
+  .temp-value {
+    font-weight: bold;
+    color: white;
+    text-shadow: 
+      /* 4px Black Outline (16-direction) */
+      -4px -4px 0 #000,
+      -4px  0   0 #000,
+      -4px  4px 0 #000,
+       0    4px 0 #000,
+       4px  4px 0 #000,
+       4px  0   0 #000,
+       4px -4px 0 #000,
+       0   -4px 0 #000,
+      
+      /* White Glow */
+      0 0 15px rgba(255, 255, 255, 0.7);
+    
+    paint-order: stroke fill;
+  }
